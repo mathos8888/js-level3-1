@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>js-3-1</title>
+    <style>
+        *{
+            font-family:cursive;
+        }
+        #body{
+            width:1000px;
+            margin:0 auto;
+            background-color:grey;
+        }
+        #count{
+            height:50px;
+        }
+        #count>span{
+            color:white;
+            font-size:24px;
+            min-width:100px;
+            line-height:50px;
+        }
+        #boxes{
+            width:100%;
+            height:200px;
+            margin-bottom:30px;
+            background-color:white;
+        }
+        .box{
+            width:200px;
+            height:200px;
+            margin:0 25px;
+            background-color:black;
+            color:aliceblue;
+            float:left;
+            text-align:center;
+            font-size:100px;
+            line-height:200px;
+        }
+        .float-left{
+            float:left;
+        }
+        .float-right{
+            float:right;
+        }
+        #clear-button{
+            border:none;
+            border-left:1px solid white;
+            box-sizing: border-box;
+            padding:0 25px;
+            margin-left: 15px;
+            line-height:50px;
+            background-color:transparent;
+            color:white;
+            font-size:24px;
+            cursor:pointer;
+        }
+        #clear-button:focus{
+            outline:none;
+        }
+    </style>
+</head>
+<body>
+    <div id="body">
+       
+        <button class="float-right" id="clear-button">Clear</button>
+        <div id="count"><span class="float-right">Count: <span id="count_num" class="float-right"></span></span></div>
+        <div id="boxes">
+            <div id="box-1" class="box" draggable="true">1</div>
+            <div id="box-2" class="box" draggable="true">2</div>
+            <div id="box-3" class="box" draggable="true">3</div>
+            <div id="box-4" class="box" draggable="true">4</div>
+        </div>
+        <button id="change">Change</button>
+        <div id="result"></div>
+    </div>
+    <script>
+//        var c = localStorage.getItem("count");
+//        var k = document.getElementById('count_num');
+//        var clrBtn = document.getElementById('clear-button');
+//        var result = document.getElementById('result');
+////        k.textContent = c.toString(10);
+//        if(c == null){
+//            c = 0;
+//            k.textContent = c;
+//        }else{
+//            c = parseInt(c, 10);
+//            k.textContent = c;
+//        }
+//        var x = document.getElementById('boxes');
+//        x.onclick = function(){
+//            c = localStorage.getItem("count");
+//            c = parseInt(c, 10);
+//            c++;
+//            k.textContent = c.toString(10);
+//            localStorage.setItem("count",(c).toString(10));
+//        };
+//        clrBtn.onclick = function(){
+//            localStorage.setItem("count",'0');
+//            k.textContent = 0;
+//        }
+//        
+//        var boxes = document.getElementsByClassName('box');
+//        for(i=0;i<boxes.length;i++){
+//            boxes[i].setAttribute('id','box-'+(i+1));
+//        }
+//        var asd = boxes[0].outerHTML;
+//        document.write(asd);
+        
+//        for(i=0;i<boxes.length;i++){
+//            document.write('<' + boxes[i].nodeName + ' ');
+//            for(j=0;j<boxes[i].attributes.length;j++){
+//                document.write(boxes[i].attributes[j].nodeName + '="' + boxes[i].attributes[j].nodeValue + '" ')
+//            }
+//            document.write('>' + boxes[i].innerHTML + '</' + boxes[i].nodeName + '>');
+//        }
+        /*
+        var box1 = boxes[0];
+        var box2 = boxes[1];
+        var box3 = boxes[2];
+        var box4 = boxes[3];
+        var box1Html = boxes[0].outerHTML;
+        var box2Html = boxes[1].outerHTML;
+        var box3Html = boxes[2].outerHTML;
+        var box4Html = boxes[3].outerHTML;
+        document.write(box2Html);
+        box1.addEventListener('dragstart',function(){
+            var boxx = box1Html;
+            result.textContent = 'dragstart';
+            box2.addEventListener('dragenter',function(){
+                box1Html = box2Html;
+                document.write(box2Html);
+                box2Html = boxx;
+                document.clear();
+                */
+//                document.write('<div id="body"><button class="float-right" id="clear-button">Clear</button><div id="count"><span class="float-right">Count: <span id="count_num" class="float-right"></span></span></div><div id="boxes">');
+//                document.write('</div><div id="result"></div></div>');
+//                console.log(box1.innerHTML);
+//                this.addEventListener('dragleave',function(){
+//                    console.log(box1);
+//                });
+//                console.log(boxx);
+//            });
+//        });
+        
+//        var x = document.getElementsByClassName('box')[0];
+//        var result = x;
+//        var res = document.getElementById('result');
+//        res.innerHTML = result;
+        
+        
+        
+//function DragNSort (config) {
+//    this.$activeItem = null;
+//    this.$container = config.container;
+//    this.$items = this.$container.querySelectorAll('.' + config.itemClass);
+//    this.dragStartClass = config.dragStartClass;
+//    this.dragEnterClass = config.dragEnterClass;
+//}
+
+//DragNSort.prototype.removeClasses = function () {
+//    [].forEach.call(this.$items, function ($item) {
+//        $item.classList.remove(this.dragStartClass, this.dragEnterClass);
+//    }.bind(this));
+//};
+//  
+//DragNSort.prototype.on = function (elements, eventType, handler) {
+//    [].forEach.call(elements, function (element) {
+//        element.addEventListener(eventType, handler.bind(element, this), false);
+//    }.bind(this));
+//};
+//  
+//DragNSort.prototype.onDragStart = function (_this, event) {
+//    _this.$activeItem = this;
+//
+//    this.classList.add(_this.dragStartClass);
+//    event.dataTransfer.effectAllowed = 'move';
+//    event.dataTransfer.setData('text/html', this.innerHTML);
+//};
+//  
+//DragNSort.prototype.onDragEnd = function (_this) {
+//    this.classList.remove(_this.dragStartClass);  
+//};
+//  
+//DragNSort.prototype.onDragEnter = function (_this) {
+//    this.classList.add(_this.dragEnterClass);
+//};
+//  
+//DragNSort.prototype.onDragLeave = function (_this) {
+//    this.classList.remove(_this.dragEnterClass);
+//};
+//  
+//DragNSort.prototype.onDragOver = function (_this, event) {
+//    if(event.preventDefault) {
+//        event.preventDefault();
+//    }
+//  
+//    event.dataTransfer.dropEffect = 'move';
+//
+//    return false;
+//};
+//  
+//DragNSort.prototype.onDrop = function (_this, event) {
+//    if(event.stopPropagation) {
+//        event.stopPropagation();
+//    }
+//  
+//    if(_this.$activeItem !== this) {
+//        _this.$activeItem.innerHTML = this.innerHTML;
+//        this.innerHTML = event.dataTransfer.getData('text/html');
+//    }
+//  
+//    _this.removeClasses();
+//
+//    document.getElementById("count").innerText++;  
+//
+//    return false;
+//};
+//  
+//DragNSort.prototype.bind = function () {
+//    this.on(this.$items, 'dragstart', this.onDragStart);
+//    this.on(this.$items, 'dragend', this.onDragEnd);
+//    this.on(this.$items, 'dragover', this.onDragOver);
+//    this.on(this.$items, 'dragenter', this.onDragEnter);
+//    this.on(this.$items, 'dragleave', this.onDragLeave);
+//    this.on(this.$items, 'drop', this.onDrop);
+//};
+//  
+//DragNSort.prototype.init = function () {
+//    this.bind();
+//};
+//  
+//  var draggable = new DragNSort({
+//    container: document.querySelector('.drag-list'),
+//    itemClass: 'drag-item',
+//    dragStartClass: 'drag-start',
+//    dragEnterClass: 'drag-enter'
+//  });
+//
+//draggable.init();
+    </script>
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
